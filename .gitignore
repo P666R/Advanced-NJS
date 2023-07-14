@@ -1,0 +1,9 @@
+node_modules
+nohup.out
+.DS_Store
+
+.env
+.env.production
+.env.test
+
+config/dev.js
