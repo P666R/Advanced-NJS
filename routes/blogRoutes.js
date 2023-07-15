@@ -20,7 +20,7 @@ module.exports = (app) => {
     const { promisify } = require('util');
     client.get = promisify(client.get);
 
-    // do we have any cachd data in redis related to this query
+    // do we have any cache data in redis related to this query
     const cachedBlogs = await client.get(req.user.id);
 
     // if yes then respond to the request right away and return
