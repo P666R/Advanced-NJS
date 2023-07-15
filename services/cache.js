@@ -1,4 +1,10 @@
 const mongoose = require('mongoose');
+const redis = require('redis');
+const { promisify } = require('util');
+
+const redisUrl = 'redis://localhost:6379';
+const client = redis.createClient(redisUrl);
+client.get = promisify(client.get);
 
 const exec = mongoose.Query.prototype.exec;
 
